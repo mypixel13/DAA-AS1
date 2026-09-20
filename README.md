@@ -36,8 +36,3 @@ javac -d out $(find src/main/java -name "*.java")
 java -cp out bench.Benchmark
 ```
 
-## Что дальше
-
-- `results.csv` можно закинуть в Python/Excel и построить графики (time vs n, depth vs n, ratio vs n) для отчёта.
-- Отчёт (REPORT.md) с асимптотикой, рекуррентными соотношениями и разбором графиков — отдельно, шаблон могу накидать следующим сообщением.
-- Git: завести ветки `feature/mergesort`, `feature/quicksort`, `feature/select`, `feature/metrics`, в конце смёржить в `main` и тегнуть `v1.0`.
