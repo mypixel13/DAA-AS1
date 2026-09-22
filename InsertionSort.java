@@ -1,8 +1,6 @@
 package algo;
 
-// nothing fancy here, classic insertion sort on a[lo..hi] inclusive.
-// used as a cutoff for small subarrays in MergeSort, since for tiny n
-// the constant factor of insertion sort beats the overhead of recursing further.
+
 public class InsertionSort {
 
     public static void sort(int[] a, int lo, int hi, Metrics metrics) {
