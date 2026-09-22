@@ -16,23 +16,4 @@ src/test/java/algo/
   QuickSelectTest.java
 ```
 
-## Как собрать и запустить
-
-Нужен JDK 17+ и Maven.
-
-Тесты:
-```
-mvn test
-```
-
-Бенчмарк (пишет `results.csv` в корень проекта):
-```
-mvn compile exec:java
-```
-
-Или без Maven, руками:
-```
-javac -d out $(find src/main/java -name "*.java")
-java -cp out bench.Benchmark
-```
 
