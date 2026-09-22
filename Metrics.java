@@ -2,7 +2,7 @@ package algo;
 
 // simple holder for the numbers we care about during a run.
 // gets passed into the algorithm instead of using static/global counters,
-// so different runs (and different threads, if it ever comes to that) don't step on each other.
+// so different runs don't step on each other.
 public class Metrics {
 
     public long comparisons = 0;
