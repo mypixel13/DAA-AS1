@@ -21,7 +21,7 @@ public class QuickSort {
             int pivotIndex = lo + RNG.nextInt(hi - lo + 1);
             int pivot = a[pivotIndex];
 
-            // dutch national flag / 3-way partition:
+            // 3-way partition:
             // [lo, lt-1] < pivot, [lt, gt] == pivot, [gt+1, hi] > pivot
             int lt = lo;
             int i = lo;
