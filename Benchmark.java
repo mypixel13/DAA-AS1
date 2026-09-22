@@ -15,7 +15,7 @@ public class Benchmark {
 
     private static final int[] SIZES = {1_000, 10_000, 100_000, 1_000_000};
     private static final String[] INPUT_TYPES = {"random", "sorted", "duplicates"};
-    private static final int RUNS = 5; // first run or two are always slower (jvm warm-up), so we take the median
+    private static final int RUNS = 5; 
 
     public static void main(String[] args) throws IOException {
         FileWriter csv = new FileWriter("results.csv");
@@ -52,8 +52,7 @@ public class Benchmark {
             long end = System.nanoTime();
             times[run] = end - start;
 
-            // comparisons/depth barely change between runs for the same input type,
-            // so keeping the last run's numbers is good enough here
+          
             comparisons = metrics.comparisons;
             maxDepth = metrics.maxDepth;
         }
@@ -61,9 +60,7 @@ public class Benchmark {
         Arrays.sort(times);
         double medianMs = times[RUNS / 2] / 1_000_000.0;
 
-        // Locale.US here is important - on a machine with a Russian/etc locale,
-        // %.3f would print "0,119" instead of "0.119" and silently break the CSV
-        // (comma is both the decimal separator AND the column separator)
+       
         csv.write(String.format(Locale.US, "%s,%s,%d,%.3f,%d,%d%n",
                 algorithm, inputType, n, medianMs, comparisons, maxDepth));
 
