@@ -9,8 +9,7 @@ public class MergeSort {
         if (a.length < 2) {
             return;
         }
-        // allocate the helper array ONCE here at the top and pass it down,
-        // instead of allocating a new one inside every merge() call
+        
         int[] buffer = new int[a.length];
         sort(a, buffer, 0, a.length - 1, metrics, 1);
     }
